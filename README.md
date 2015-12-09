@@ -1,8 +1,8 @@
 # CYicesSample
-Demonstrates how to directly use the C-API of
+This small project demonstrates how to directly use the C-API of
 [The Yices SMT solver](http://yices.csl.sri.com) via 
 [CYices](https://github.com/AleGit/CYices) 
-[system module](https://github.com/apple/swift-package-manager/blob/master/Documentation/SystemModules.md) in Swift.
+system module in Swift.
 
 ## Prerequisite
 
