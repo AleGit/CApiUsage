@@ -6,7 +6,7 @@ Example how to directly use
 
 ## Prerequisite
 
-Swift must have ben [downloaded](https://swift.org/download/) and installed.
+Swift and Yices must have been downloaded and installed.
 
 ## Overview
 
