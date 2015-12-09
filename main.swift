@@ -8,33 +8,36 @@ func version() {
 	return 
     }
 
-    print("Yices",version,"installed.", "app")
+    print("Yices",version,"installed.")
+    print("======================")
 }
 
 func status(context:COpaquePointer, term: term_t) {
-	print("======================================================")
-	guard let s = String(term: term) else { return }
-	print("assert", s)
+	defer { print("-----------------------------------------------") }
+	guard let string = String(term: term) else { return }
+	print("assert", string)
 
 	yices_assert_formula(context, term)
+
 	switch (yices_check_context(context, nil)) {
-	case STATUS_SAT:
-        // build the model and print it
-        print("Satisfiable\n");
-        let mdl = yices_get_model(context, 1); // 1 == true
+    case STATUS_SAT:
+        print("Satisfiable");
+        
+	// build the model and print it
+	let mdl = yices_get_model(context, 1)
+	guard mdl != nil else { return }
 	defer { yices_free_model(mdl) }
       
         guard let model_string = String(model:mdl) else { return }
-
 	print(model_string)
         break;
         
     case STATUS_UNSAT:
-        print("Unsatisfiable\n");
+        print("Unsatisfiable");
         break;
         
     case STATUS_UNKNOWN:
-        print("Status is unknown\n");
+        print("Status is unknown");
         break;
         
     case STATUS_IDLE:
@@ -47,7 +50,7 @@ func status(context:COpaquePointer, term: term_t) {
         fallthrough
     default:
         // these codes should not be returned
-        print("Bug: unexpected status returned\n");
+        print("Bug: unexpected status returned");
         break;
     }
 }
@@ -74,9 +77,6 @@ func demo() {
 
 	var args = [a,b]
 	let fab = yices_application(f,UInt32(args.count), args)
-
-	guard let sfab = String(term:fab) else { return }
-	print("fab:",sfab)
 
 	let p_domain = [ free_tau, free_tau, free_tau ]
 	let p_tau = yices_function_type(UInt32(p_domain.count), p_domain, bool_tau)
