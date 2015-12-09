@@ -26,4 +26,4 @@ Swift must have ben [downloaded](https://swift.org/download/) and installed.
 
   `Yices 2.4.1 is installed.`
 
-    
+   (Tested with Ubuntu 15.10 and Mac OS X 10.11) 
