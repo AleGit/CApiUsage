@@ -1,12 +1,12 @@
 # CYicesSample
-Example how to use 
-[The Yices SMT solver](http://yices.csl.sri.com) via 
+Example how to directly use 
+[The Yices SMT solver](http://yices.csl.sri.com) C-API via 
 [CYices](https://github.com/AleGit/CYices) 
 [system module](https://github.com/apple/swift-package-manager/blob/master/Documentation/SystemModules.md) in Swift.
 
 ## Prerequisite
 
-Swift must be [downloaded](https://swift.org/download/) and installed.
+Swift must have ben [downloaded](https://swift.org/download/) and installed.
 
 ## Overview
 
