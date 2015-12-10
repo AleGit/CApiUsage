@@ -12,7 +12,8 @@ Swift and Yices must have been downloaded and installed.
 ## Overview
 
 - Package.swift resolves the dependency to system module CYices.
-- main.swift converts and prints the Yices version C-String.
+- Demo.swift implements functions `version` and `demo`
+- main.swift calls `version()` and `demo()`
 - the following commands:
 
 ```
