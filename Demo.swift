@@ -66,31 +66,40 @@ func demo() {
     let bool_tau = yices_bool_type()
     let free_tau = yices_int_type()
     
+    // constant 'a'
     let a = yices_new_uninterpreted_term(free_tau)
     yices_set_term_name(a, "a")
+    
+    // constant 'b'
     let b = yices_new_uninterpreted_term(free_tau)
     yices_set_term_name(b, "b")
     
+    // tpye '(free,free)->free'
     let f_domain = [type_t](count:2, repeatedValue:free_tau)
     let f_tau = yices_function_type(UInt32(f_domain.count), f_domain, free_tau)
     let f = yices_new_uninterpreted_term(f_tau)
     yices_set_term_name(f, "f")
     
+    // function 'f(a,b)'
     var args = [a,b]
     let fab = yices_application(f,UInt32(args.count), args)
     
+    // type '(free,free,free)->bool'
     let p_domain = [ free_tau, free_tau, free_tau ]
     let p_tau = yices_function_type(UInt32(p_domain.count), p_domain, bool_tau)
     let p = yices_new_uninterpreted_term(p_tau)
     yices_set_term_name(p, "p")
     
+    // predicate 'p(fab,a,b)'
     args = [fab,a,b]
     let pfab = yices_application(p,UInt32(args.count), args)
-    let npfab = yices_not(pfab)
-    let clause = yices_or2(pfab,npfab)
     
-    status(context, term:clause)
+    // 'NOT p(fab,a,b)'
+    let npfab = yices_not(pfab)
+    // 'p(fab,a,b) OR NOT p(fab,a,b)'
+    let tautology = yices_or2(pfab,npfab)
+    
+    status(context, term:tautology)
     status(context, term:pfab)
     status(context, term:npfab)
-    
 }
