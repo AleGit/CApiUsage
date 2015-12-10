@@ -1,5 +1,3 @@
-import CYices
-
 version()
 
 demo()
