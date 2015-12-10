@@ -3,6 +3,7 @@ This small project demonstrates how to directly use the C-API of
 [The Yices SMT solver](http://yices.csl.sri.com) via 
 [CYices](https://github.com/AleGit/CYices) 
 system module in Swift.
+(Tested with Ubuntu 15.10 and Mac OS X 10.11)
 
 ## Prerequisite
 
@@ -24,6 +25,4 @@ Swift and Yices must have been downloaded and installed.
   
   should yield something like
 
-  `Yices 2.4.1 is installed.`
-
-   (Tested with Ubuntu 15.10 and Mac OS X 10.11) 
+  `Yices 2.4.1 installed.`
