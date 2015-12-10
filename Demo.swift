@@ -11,7 +11,7 @@ func version() {
     
 }
 
-func status(context:COpaquePointer, term: term_t) {
+private func status(context:COpaquePointer, term: term_t) {
     
     defer { print("-----------------------------------------------") } // print separator line after all output
     
