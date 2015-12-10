@@ -15,14 +15,15 @@ Swift and Yices must have been downloaded and installed.
 - main.swift converts and prints the Yices version C-String.
 - the following commands:
 
-  `git clone https://github.com/AleGit/CYicesSample.git`
-  
-  `cd CYicesSample`
-
-  `swift build`
-    
-  `.build/debug/CYicesSample`
+```
+git clone https://github.com/AleGit/CYicesSample.git`
+cd CYicesSample
+swift build
+.build/debug/CYicesSample
+```
   
   should yield something like
 
-  `Yices 2.4.1 installed.`
+```
+Yices 2.4.1 installed.
+```
