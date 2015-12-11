@@ -1,5 +1,6 @@
 import CYices
 
+/// Converts and prints C-String `yices_version`
 func version() {
     
     print("======================")             // print separator line before all output
@@ -56,6 +57,11 @@ private func status(context:COpaquePointer, term: term_t) {
     }
 }
 
+/// Constructs thre clauses:
+/// - a tautology
+/// - a positive literal clause `p(f(a,b),a,b)`
+/// - a negative literal clause 
+/// an checks satisfiability.
 func demo() {
     yices_init()
     defer { yices_exit() }
