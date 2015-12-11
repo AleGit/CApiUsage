@@ -7,7 +7,7 @@ system module in Swift.
 
 ## Prerequisite
 
-Swift and Yices must have been downloaded and installed.
+[Swift](http://swift.org) and [Yices](http://yices.csl.sri.com/) must have been downloaded and installed.
 
 ## Overview
 
@@ -17,7 +17,7 @@ Swift and Yices must have been downloaded and installed.
 - the following commands:
 
 ```
-git clone https://github.com/AleGit/CYicesSample.git`
+git clone https://github.com/AleGit/CYicesSample.git
 cd CYicesSample
 swift build
 .build/debug/CYicesSample
