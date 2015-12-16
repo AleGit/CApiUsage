@@ -1,9 +1,9 @@
 # CYicesSample
 This small project demonstrates how to directly use the C-API of
-[The Yices SMT solver](http://yices.csl.sri.com) via 
-[CYices](https://github.com/AleGit/CYices) 
+[The Yices SMT solver](http://yices.csl.sri.com) via
+[CYices](https://github.com/AleGit/CYices)
 system module in Swift.
-(Tested with Ubuntu 15.10 and Mac OS X 10.11)
+(Tested on Ubuntu 14.04 LTS, Ubuntu 15.10 and Mac OS X 10.11)
 
 ## Prerequisite
 
@@ -22,7 +22,7 @@ cd CYicesSample
 swift build
 .build/debug/CYicesSample
 ```
-  
+
   should yield something like
 
 ```
