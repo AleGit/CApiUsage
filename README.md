@@ -1,5 +1,4 @@
 # CYicesSample
-*Does not work with snapshot 2016-01-26? Swift-build is missing.*
 
 This small project demonstrates how to directly use the C-API of
 [The Yices SMT solver](http://yices.csl.sri.com) via
@@ -9,7 +8,7 @@ system module in Swift.
 
 ## Prerequisite
 
-[Swift](http://swift.org) and [Yices](http://yices.csl.sri.com/) must have been downloaded and installed.
+[Swift](http://swift.org)/usr/bin/swift-build and [Yices](http://yices.csl.sri.com/) must have been downloaded and installed.
 
 ## Overview
 
@@ -28,5 +27,5 @@ swift build
   should yield something like
 
 ```
-Yices 2.4.1 installed.
+Yices 2.4.2 installed.
 ```
