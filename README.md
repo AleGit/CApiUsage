@@ -1,4 +1,6 @@
 # CYicesSample
+*Does not work with snapshot 2016-01-26*
+
 This small project demonstrates how to directly use the C-API of
 [The Yices SMT solver](http://yices.csl.sri.com) via
 [CYices](https://github.com/AleGit/CYices)
