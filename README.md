@@ -1,5 +1,5 @@
 # CYicesSample
-*Does not work with snapshot 2016-01-26*
+*Does not work with snapshot 2016-01-26? Swift-build is missing.*
 
 This small project demonstrates how to directly use the C-API of
 [The Yices SMT solver](http://yices.csl.sri.com) via
