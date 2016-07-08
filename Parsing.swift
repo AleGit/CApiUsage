@@ -1,6 +1,14 @@
 import CTptpParsing
 
-extension UnsafeMutablePointer where Pointee : Equatable {
+protocol FILEProtocol {
+
+}
+
+extension FILE : FILEProtocol {
+
+}
+
+extension UnsafeMutablePointer where Pointee : FILEProtocol {
 
 }
 
@@ -10,7 +18,7 @@ struct Parsing {
     var store = prlcCreateStore(10000)
     prlcParsingStore = store
     defer {
-      prlcDestroyStore(store)
+      prlcDestroyStore(&store)
       prlcParsingStore = nil
     }
     guard let hello = prlcStoreSymbol(store,"Hello, World."),
@@ -49,38 +57,33 @@ static func demoParse() {
 
   print(path, size)
 
+var store = prlcCreateStore(size)
+
+
+defer {
+  prlcDestroyStore(&store)
+}
+
+/* parsing */
+
 prlc_in = file;
 prlc_restart(file);
 prlc_lineno = 1;
 
-prlcParsingStore = prlcCreateStore(size)
+prlcParsingStore = store
 prlcParsingRoot = prlcStoreNodeFile (prlcParsingStore,path,nil);
+let code = prlc_parse ()
+// let root = prlcParsingRoot
+prlcParsingStore = nil
+prlcParsingRoot = nil
+/* parsing end */
 
-defer {
-  prlcDestroyStore(prlcParsingStore)
+guard let first = prlcFirstSymbol(store) else {
+  print("ERROR: no first symbol found")
+  return
 }
 
-if let s = String(validatingUTF8:prlcParsingRoot.pointee.symbol) {
-  print("root.symbol", s)
-}
-
-let code = prlc_parse ();
-
-var len = 0 as UInt
-let off = 3 as UInt
-var cname = prlcFirstSymbol(prlcParsingStore)
-while let ccname = cname {
-  len += strlen(ccname) + off
-  if len > 89 || cname == prlcParsingRoot.pointee.symbol {
-    print(" ")
-    len = strlen(ccname) + off
-  }
-  print(" ", String(validatingUTF8:ccname))
-  cname = prlcNextSymbol(prlcParsingStore, ccname)
-}
-
-
-
+print(first)
 }
 
 }
