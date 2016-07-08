@@ -2,7 +2,9 @@
 
 
 // print version of installed Yices
-version()
+Yices.version()
 
 // demonstrate quantifier free predicate logic
-demo()
+Yices.demo()
+
+Parsing.demoStore()

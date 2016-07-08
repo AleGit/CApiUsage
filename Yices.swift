@@ -1,7 +1,9 @@
 import CYices
 
+struct Yices {
+
 /// Converts and prints C-String `yices_version`
-func version() {
+static func version() {
 
     print("======================")             // print separator line before all output
     defer { print("======================") }   // print separator line after all output
@@ -12,7 +14,7 @@ func version() {
 
 }
 
-private func status(context:OpaquePointer, term: term_t) {
+private static func status(context:OpaquePointer, term: term_t) {
 
     defer { print("-----------------------------------------------") } // print separator line after all output
 
@@ -61,7 +63,7 @@ private func status(context:OpaquePointer, term: term_t) {
 /// - a positive literal clause `p(f(a,b),a,b)`
 /// - a negative literal clause
 /// an checks satisfiability.
-func demo() {
+static func demo() {
     yices_init()
     defer { yices_exit() }
 
@@ -107,4 +109,5 @@ func demo() {
     status(context:context, term:tautology)
     status(context:context, term:pfab)
     status(context:context, term:npfab)
+}
 }
