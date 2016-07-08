@@ -31,3 +31,9 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
+
+# Backup files and Folders
+*~
+.build/
+Packages/
+
