@@ -8,3 +8,4 @@ Yices.version()
 Yices.demo()
 
 Parsing.demoStore()
+Parsing.demoParse()
