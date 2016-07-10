@@ -5,7 +5,7 @@
 Yices.version()
 
 // demonstrate quantifier free predicate logic
-// Yices.demo()
+Yices.demo()
 
 // Parsing.demoStore()
 Parsing.demoParse()
