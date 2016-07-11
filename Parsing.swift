@@ -39,7 +39,7 @@ struct Parsing {
     prlc_lineno = 1;
 
     prlcParsingStore = store
-    prlcParsingRoot = prlcStoreNodeFile (prlcParsingStore,path,nil);
+    prlcParsingRoot = prlcStoreNodeFile (prlcParsingStore,path);
 
     let code = prlc_parse ()
     let root = prlcParsingRoot
